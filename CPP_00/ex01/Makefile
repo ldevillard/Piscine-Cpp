@@ -1,7 +1,8 @@
-NAME = megaphone
+NAME = AwesomePhoneBook
 CC = clang++
 FLAGS = -Wall -Wextra -Werror 
-SRCS = megaphone.cpp
+SRCS = main.cpp\
+		Contact.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 %.o: %.cpp
@@ -16,10 +17,12 @@ $(NAME): $(OBJS)
 all : $(NAME)
 
 clean :
+		@clear
 		@rm -rf *.o
 		@echo "\033[91m...\033[0m"
 
 fclean : clean
+		@clear
 		@rm -rf *.o
 		@rm -rf $(NAME)
 		@echo "\033[91mFINISHED\033[0m"
