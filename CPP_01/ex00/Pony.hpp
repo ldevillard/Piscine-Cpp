@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 10:29:49 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/04 10:41:04 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/04 11:20:00 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 #include <iostream>
 #include <string>
+#include <unistd.h>
 
 class Pony
 {
 	public :
 	void	pony_init(std::string name, std::string color, int heigt, int age);
+	void	pony_jump() const;
 	void	pony_display_info() const;
 
 	private :
