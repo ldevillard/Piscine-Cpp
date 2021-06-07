@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 10:39:21 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/07 10:00:25 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/07 10:33:25 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/07 10:46:39 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "Zombie.hpp"
+#include <iostream>
 
-void	ponyOnTheStack(void)
+Zombie::Zombie()
 {
-	Pony	my_pony;
-	my_pony.pony_init("Magloire", "Black", 102, 50);
-	my_pony.pony_display_info();
-	my_pony.pony_jump();
+	mName = "Walkers";
+	mType = 1;
 }
 
-void	 ponyOnTheHeap(void)
+Zombie::Zombie(std::string name, int type)
 {
-	Pony	*my_pony;
-
-	my_pony = new Pony;
-	my_pony->pony_init("VincentMagdoom", "Noir", 52, 12);
-	my_pony->pony_display_info();
-	my_pony->pony_jump();
-	delete my_pony;
+	mName = name;
+	mType = type;
 }
 
-int	main()
+Zombie::~Zombie()
 {
-	ponyOnTheStack();
-	ponyOnTheHeap();
-	return (0);
+	
+}
+
+void	Zombie::advert() const
+{
+	std::cout << "<" + mName + " (" << mType << ")> Braiiiiiiinnnssss ...";
+	std::cout << std::endl;
 }

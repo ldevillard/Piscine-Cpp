@@ -5,35 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 10:39:21 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/07 10:00:25 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/07 10:41:41 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/07 11:30:15 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
-
-void	ponyOnTheStack(void)
-{
-	Pony	my_pony;
-	my_pony.pony_init("Magloire", "Black", 102, 50);
-	my_pony.pony_display_info();
-	my_pony.pony_jump();
-}
-
-void	 ponyOnTheHeap(void)
-{
-	Pony	*my_pony;
-
-	my_pony = new Pony;
-	my_pony->pony_init("VincentMagdoom", "Noir", 52, 12);
-	my_pony->pony_display_info();
-	my_pony->pony_jump();
-	delete my_pony;
-}
+#include "Zombie.hpp"
+#include "ZombieEvent.hpp"
+#include <iostream>
 
 int	main()
 {
-	ponyOnTheStack();
-	ponyOnTheHeap();
+	Zombie *z1;
+	Zombie z2("Yves", 5);
+	ZombieEvent event;
+
+	z2.advert();
+
+	event.setZombieType(3);
+	z1 = event.newZombie("Florence");
+	z1->advert();
+	delete z1;
+
+	event.randomChump();
 	return (0);
 }
