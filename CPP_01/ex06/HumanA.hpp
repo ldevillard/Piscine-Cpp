@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.hpp                                          :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 09:19:23 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/08 10:03:41 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/08 10:18:09 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/08 10:38:55 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_HPP
-# define HUMAN_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-#include "Brain.hpp"
+#include "Weapon.hpp"
 
-class Human
+class HumanA
 {
 	public:
-	const Brain	&getBrain() const;
-	std::string	identify() const;
+	HumanA(std::string name, Weapon &weapon);
+	void	attack() const;
+
 	private:
-		const Brain mind;
+	Weapon	&mWeapon;
+	std::string	mName;
 };
 
 #endif

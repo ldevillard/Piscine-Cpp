@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:40:20 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/07 15:45:49 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/08 09:21:56 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Brain
 {
 	public:
-	Brain(int qi, int size, int age, std::string humor, std::string wisdom);
+	Brain();
 	std::string	identify() const;
 
 	private:

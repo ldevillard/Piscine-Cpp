@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.hpp                                          :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 09:19:23 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/08 10:03:41 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/08 10:10:34 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/08 10:56:20 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_HPP
-# define HUMAN_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-#include "Brain.hpp"
+#include <string>
 
-class Human
+class Weapon
 {
 	public:
-	const Brain	&getBrain() const;
-	std::string	identify() const;
+	Weapon();
+	Weapon(std::string type);
+	const std::string	&getType();
+	void	setType(std::string type);
+
 	private:
-		const Brain mind;
+	std::string	mType;
 };
 
 #endif

@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 15:46:03 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/08 09:22:02 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/08 10:49:58 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/08 11:15:10 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "HumanB.hpp"
 #include <iostream>
-#include <sstream>
 
-Brain::Brain()
+HumanB::HumanB(std::string name) : mName(name)
 {
-	mIq = 180;
-	mSize = 10;
-	mAge = 21;
-	mHumor = "Good";
-	mWisdom = "Awesome";
 }
 
-std::string	Brain::identify() const
+HumanB::~HumanB()
 {
-	Brain	*ptr;
-	std::string	ret;
-	int	i;
+}
 
-	ptr = (Brain *)this;
+void	HumanB::attack() const
+{
+	Weapon &tmp = *mWeapon;
+	std::cout << mName + " attacks with his " << tmp.getType() << std::endl;
+}
 
-	std::ostringstream get_the_address; 
-	get_the_address << ptr;
-	ret = get_the_address.str(); 
-
-	for (i = 2; ret[i]; i++)
-			ret[i] = toupper(ret[i]);
-
-	return (ret);
+void	HumanB::setWeapon(Weapon &weapon)
+{
+	mWeapon = &weapon;
 }
