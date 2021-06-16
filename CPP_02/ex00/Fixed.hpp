@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 13:43:24 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/09 11:41:22 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/15 14:36:14 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/16 09:12:15 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
 #include <iostream>
 
-int	main()
+class Fixed
 {
-	srand(time(0)); //Init seed for random generation
-	ZombieHorde horde(5);
+	public:
+		Fixed(); //default constructor
+		Fixed(const Fixed &); //copy constructor
+		~Fixed(); //destructor
+		Fixed	&operator=(const Fixed &);
 
-	horde.announce();
-	return (0);
-}
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+
+	private:
+		int	_value;
+		static int const _bits = 8;
+};
+
+
+#endif
