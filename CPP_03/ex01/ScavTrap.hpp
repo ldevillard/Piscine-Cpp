@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 13:52:47 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/21 14:24:05 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/21 14:58:59 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/21 15:48:47 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include <string>
 
@@ -21,15 +21,15 @@
 # define YELLOW "\e[1;33m"
 # define RESET "\e[0m"
 
-class FragTrap
+class ScavTrap
 {
 	public:
-		FragTrap(std::string name);
-		~FragTrap();
+		ScavTrap(std::string name);
+		~ScavTrap();
 
 		void	rangedAttack(std::string const &target) const;
 		void	meleeAttack(std::string const &target) const;
-		void	vaulthunter_dot_exe(std::string const &target);
+		void	challengeNewcomer(void) const;
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
