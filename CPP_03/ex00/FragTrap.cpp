@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 14:02:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/21 15:11:37 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/22 09:57:22 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ FragTrap::FragTrap(std::string name) : _name(name)
 	_meleeAttackDamage = 30;
 	_rangedAttackDamage = 20;
 	_armorDamageReduction = 5;
-	std::cout << name + " est construit :)" << std::endl << std::endl;
+	std::cout << name + " est construit :)" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << std::endl << _name + " est détruit :(" << std::endl;
+	std::cout << _name + " est détruit :(" << std::endl;
 }
 
 void	FragTrap::rangedAttack(std::string const &target) const

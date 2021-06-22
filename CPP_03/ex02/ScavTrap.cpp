@@ -6,70 +6,26 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 15:42:59 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/22 09:52:59 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/22 09:36:33 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : _name(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	_hitPoints = 100;
-	_maxHitPoints = 100;
 	_energyPoints = 50;
 	_maxEnergyPoints = 50;
-	_level = 1;
 	_meleeAttackDamage = 20;
 	_rangedAttackDamage = 15;
 	_armorDamageReduction = 3;
-	std::cout << name + " est prêt à tenir la porte :)" << std::endl;
+	std::cout << name + "(ScavTrap) est prêt à tenir la porte :)" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << _name + " en a marre et se casse :(" << std::endl;
-}
-
-void	ScavTrap::rangedAttack(std::string const &target) const
-{
-	std::cout << BLUE;
-	std::cout << "SC4V-TP " + _name + " attaque " + target + " avec le loquet, causant " << _rangedAttackDamage << " points de dégâts" << std::endl;
-	std::cout << RESET;
-}
-
-void	ScavTrap::meleeAttack(std::string const &target) const
-{
-	std::cout << YELLOW;
-	std::cout << "SC4V-TP " + _name + " attaque " + target + " en claquant la porte, causant " << _meleeAttackDamage << " points de dégâts" << std::endl;
-	std::cout << RESET;
-}
-
-void	ScavTrap::takeDamage(unsigned int amount)
-{
-	_hitPoints -= amount;
-	if (_armorDamageReduction > 0)
-		_hitPoints += _armorDamageReduction;
-	if (_hitPoints > _maxHitPoints)
-		_hitPoints = _maxHitPoints;
-	if (_hitPoints <= 0)
-		_hitPoints = 0;
-	std::cout << RED;
-	std::cout << "SC4V-TP " + _name + " prend " << amount << " dêgats, il a maintenant " << _hitPoints << " points de vie" << std::endl;
-	std::cout << RESET;
-}
-
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	_hitPoints += amount;
-	_energyPoints += amount;
-	if (_energyPoints > _maxEnergyPoints)
-		_energyPoints = _maxEnergyPoints;
-	if (_hitPoints > _maxHitPoints)
-		_hitPoints = _maxHitPoints;
-	std::cout << GREEN;
-	std::cout << "SC4V-TP " + _name + " est réparé et il a " << _hitPoints << " points de vie et " << _energyPoints << " points d'énergie" << std::endl;
-	std::cout << RESET;
+	std::cout << _name + "(ScavTrap) en a marre et se casse :(" << std::endl;
 }
 
 void	ScavTrap::challengeNewcomer(void) const
