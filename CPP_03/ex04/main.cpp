@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 09:27:51 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/22 11:19:34 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/22 14:00:10 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int	main()
 	std::cout << std::endl;
 	JusteTropFortEnFait.rangedAttack("Sasuke");
 	JusteTropFortEnFait.meleeAttack("Naruto");
+	JusteTropFortEnFait.ninjaShoebox(Sasuke);
 	return (0);
 }

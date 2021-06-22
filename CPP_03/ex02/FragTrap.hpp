@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:52:47 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/22 09:18:45 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/22 14:04:07 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class FragTrap : public ClapTrap
 		~FragTrap();
 
 		void	vaulthunter_dot_exe(std::string const &target);
+		void	meleeAttack(std::string const &target) const;
+		void	rangedAttack(std::string const &target) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 14:58:59 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/22 09:31:55 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/22 14:05:35 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 
 		void	challengeNewcomer(void) const;
+		void	rangedAttack(std::string const &target) const;
+		void	meleeAttack(std::string const &target) const;
 
 };
 

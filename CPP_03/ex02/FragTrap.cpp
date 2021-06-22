@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 14:02:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/22 09:47:31 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/22 14:04:43 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,18 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target)
 		std::cout << RESET;
 		std::cout << "FR4G-TP " + _name + " n'a plus que " << _energyPoints << " points d'énergie" << std::endl;
 	}
+}
+
+void	FragTrap::meleeAttack(std::string const &target) const
+{
+	std::cout << YELLOW;
+	std::cout << "CL4P-TP " + _name + " défonce " + target + " au corps à corps, causant " << _meleeAttackDamage << " points de dégâts" << std::endl;
+	std::cout << RESET;
+}
+
+void	FragTrap::rangedAttack(std::string const &target) const
+{
+	std::cout << BLUE;
+	std::cout << "CL4P-TP " + _name + " attaque " + target + " avec son arc " << _rangedAttackDamage << " points de dégâts" << std::endl;
+	std::cout << RESET;
 }

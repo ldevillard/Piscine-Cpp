@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 15:42:59 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/22 09:36:33 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/22 14:06:22 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,18 @@ void	ScavTrap::challengeNewcomer(void) const
 		std::cout << "Mauvaise réponse !" << std::endl;
 		std::cout << RESET;
 	}
+}
+
+void	ScavTrap::meleeAttack(std::string const &target) const
+{
+	std::cout << YELLOW;
+	std::cout << "CL4P-TP " + _name + " attaque " + target + " avec un coup de loquet " << _meleeAttackDamage << " points de dégâts" << std::endl;
+	std::cout << RESET;
+}
+
+void	ScavTrap::rangedAttack(std::string const &target) const
+{
+	std::cout << BLUE;
+	std::cout << "CL4P-TP " + _name + " attaque " + target + " en lui lechant le pied " << _rangedAttackDamage << " points de dégâts" << std::endl;
+	std::cout << RESET;
 }
