@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:33:31 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/27 19:42:42 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/27 20:17:04 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Victim::~Victim()
 Victim::Victim(const Victim &copy)
 {
 	_name = copy.getName();
+	std::cout << "Some random victim called " + _name + " just appeared!" << std::endl;
 }
 
 Victim	&Victim::operator=(const Victim &copy)

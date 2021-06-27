@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   Bowman.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 19:32:13 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/27 20:03:46 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/27 20:08:11 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/27 20:08:53 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-# define VICTIM_HPP
+#ifndef BOWMAN_HPP
+# define BOWMAN_HPP
 
+#include "Victim.hpp"
 #include <string>
 #include <iostream>
 
-class Victim
+class Bowman : public Victim
 {
 	public:
-		Victim(const std::string name);
-		Victim(const Victim &copy);
-		virtual ~Victim();
-		Victim	&operator=(const Victim &copy);
+		Bowman(const std::string name);
+		Bowman(const Bowman &copy);
+		virtual ~Bowman();
+		Bowman	&operator=(const Bowman &copy);
 
-		std::string	introduce() const;
-		virtual void	getPolymorphed() const;
-
-		std::string	getName() const {return _name;}
-
-	protected:
-		std::string _name;
+		void	getPolymorphed() const;
 };
-
-std::ostream	&operator<<(std::ostream &out, const Victim &src);
 
 #endif 
