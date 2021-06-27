@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 10:22:30 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/26 10:41:21 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/27 19:44:56 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ std::string	Sorcerer::introduce() const
 
 std::ostream	&operator<<(std::ostream &out, const Sorcerer &src)
 {
-	out << src.introduce();
+	out << src.introduce() << std::endl;
 	return (out);
+}
+
+void Sorcerer::polymorph(Victim const &src) const
+{
+	src.getPolymorphed();
 }
