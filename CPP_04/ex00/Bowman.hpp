@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 20:08:11 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/27 20:08:53 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/28 09:11:48 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Bowman : public Victim
 {
 	public:
-		Bowman(const std::string name);
+		Bowman(const std::string name = "Unknown");
 		Bowman(const Bowman &copy);
 		virtual ~Bowman();
 		Bowman	&operator=(const Bowman &copy);

@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   PowerFist.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 19:32:13 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/28 09:11:39 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/28 09:30:13 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/28 10:25:37 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-# define VICTIM_HPP
+#ifndef POWERFIST_HPP
+# define POWERFIST_HPP
 
-#include <string>
 #include <iostream>
+#include <string>
+#include "AWeapon.hpp"
 
-class Victim
+class PowerFist : public AWeapon
 {
 	public:
-		Victim(const std::string name = "Unknown");
-		Victim(const Victim &copy);
-		virtual ~Victim();
-		Victim	&operator=(const Victim &copy);
+		PowerFist();
+		PowerFist(const PowerFist &copy);
+		PowerFist	&operator=(const PowerFist &copy);
+		virtual ~PowerFist();
 
-		std::string	introduce() const;
-		virtual void	getPolymorphed() const;
-
-		std::string	getName() const {return _name;}
-
-	protected:
-		std::string _name;
+		virtual void attack() const;
 };
 
-std::ostream	&operator<<(std::ostream &out, const Victim &src);
-
-#endif 
+#endif

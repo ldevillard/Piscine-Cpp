@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:45:25 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/27 19:56:31 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/28 09:11:29 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Peon : public Victim
 {
 	public:
-		Peon(const std::string name);
+		Peon(const std::string name = "Unknown");
 		Peon(const Peon &copy);
 		virtual ~Peon();
 		Peon	&operator=(const Peon &copy);

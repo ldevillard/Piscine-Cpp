@@ -5,37 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/26 10:39:03 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/28 09:12:35 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/28 10:23:44 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/28 10:34:03 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
-#include "Bowman.hpp"
+#include <iostream>
+#include <string>
+#include "Character.hpp"
+#include "Enemy.hpp"
+#include "RadScorpion.hpp"
+#include "AWeapon.hpp"
+#include "PowerFist.hpp"
+#include "PlasmaRifle.hpp"
 
 int main()
 {
-	Sorcerer robert("Robert", "the Magnificent");
-
-	Victim jim("Jimmy");
-	Peon joe("Joe");
+	Character* me = new Character("me");
 	
-	Bowman elwin("Elwin");
-	Bowman moogly("Moogly");
-	Bowman elwin2(elwin);
+	std::cout << *me;
 
-	moogly = elwin;
-	
-	std::cout << robert << jim << joe << elwin << moogly << elwin2;
+	Enemy* b = new RadScorpion();
 
-	robert.polymorph(jim);
-	robert.polymorph(joe);
+	AWeapon* pr = new PlasmaRifle();
+	AWeapon* pf = new PowerFist();
 
-	robert.polymorph(elwin);
-	robert.polymorph(moogly);
-	robert.polymorph(elwin2);
+	me->equip(pr);
+	std::cout << *me;
+	me->equip(pf);
 
+	me->attack(b);
+	std::cout << *me;
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
+
+	delete pr;
+	delete pf;
+	delete me;
 	return 0;
 }

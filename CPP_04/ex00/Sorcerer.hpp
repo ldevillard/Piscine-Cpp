@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 10:16:13 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/27 19:45:00 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/28 09:11:16 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Sorcerer
 {
 	public:
-		Sorcerer(const std::string name, const std::string title);
+		Sorcerer(const std::string name = "Unknown", const std::string title = "Unknown");
 		Sorcerer(const Sorcerer &copy);
 		~Sorcerer();
 		Sorcerer	&operator=(const Sorcerer &copy);
