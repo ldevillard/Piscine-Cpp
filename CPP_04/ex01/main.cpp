@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 10:23:44 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/28 10:34:03 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/28 10:41:33 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include "AWeapon.hpp"
 #include "PowerFist.hpp"
 #include "PlasmaRifle.hpp"
+#include "SuperMutant.hpp"
 
 int main()
 {
@@ -44,7 +45,25 @@ int main()
 	std::cout << *me;
 
 	delete pr;
-	delete pf;
 	delete me;
+
+	std::cout << "--------------------------------------" << std::endl;
+
+	Character* bobby = new Character("bobby");
+
+	std::cout << *bobby;
+
+	Enemy* titan = new SuperMutant();
+
+	AWeapon* arm = pf;
+
+	me->equip(arm);
+	std::cout << *bobby;
+	while (titan->getHP() > 0)
+		bobby->attack(titan);
+	std::cout << *bobby;
+
+	delete bobby;
+	delete arm;
 	return 0;
 }
