@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bowman.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 20:08:11 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/29 10:11:44 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/06/29 13:30:33 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/06/29 14:58:10 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOWMAN_HPP
-# define BOWMAN_HPP
+#include "Bureaucrat.hpp"
 
-#include "Victim.hpp"
-#include <string>
-#include <iostream>
+int main()
+{
+	try
+	{
+		Bureaucrat Bobby("Bobby", 28);
+		std::cout << Bobby;
+		std::cout << "----------------" << std::endl;
+		Bureaucrat Mat("Mat", 3);
+		for (int i = 0; i < 3; i++)
+		{
+			Mat.incrementGrade();
+			std::cout << Mat;
+		}
+	}
+	catch(std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+		return 1;
+	}
 
-class Bowman : public Victim
-{	
-	private:
-		Bowman(const std::string name = "Unknown");
-	public:
-		Bowman(const Bowman &copy);
-		virtual ~Bowman();
-		Bowman	&operator=(const Bowman &copy);
-
-		void	getPolymorphed() const;
-};
-
-#endif 
+	return 0;
+}

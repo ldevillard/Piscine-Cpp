@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:48:31 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/28 17:55:20 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/29 09:01:22 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ Character	&Character::operator=(const Character & copy)
 
 Character::~Character()
 {
+	/*std::cout << _name << std::endl;
+	std::cout << _inventory[0] << std::endl;
+	std::cout << _inventory[1] << std::endl;
+	std::cout << _inventory[2] << std::endl;
+	std::cout << _inventory[3] << std::endl;*/
+
 	delete [] _inventory;
 }
 
@@ -68,5 +74,6 @@ void	Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	_inventory[idx]->use(target);
+	if (_inventory[idx] != NULL)
+		_inventory[idx]->use(target);
 }

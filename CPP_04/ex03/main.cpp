@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 15:37:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/28 18:03:08 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/29 09:18:48 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 	src->learnMateria(new Cure());
 	src->learnMateria(new Ice());
 	
-	ICharacter* me = new Character("me");
+	Character* me = new Character("me");
 
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
@@ -38,8 +38,11 @@ int main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	
-	ICharacter* bob = new Character("bob");
+	Character* bob = new Character("bob");
 	
+	AMateria *ptr = me->getMateria(3)->clone();
+	me->unequip(3);
+
 	me->use(0, *bob);
 	me->use(1, *bob);
 	delete bob;
@@ -49,9 +52,9 @@ int main()
 
 	std::cout << "xp : " << tmp->getXP() << std::endl;
 
-	//delete bob;
 	delete me;
 	delete src;
+	delete ptr;
 
 	return 0;
 }

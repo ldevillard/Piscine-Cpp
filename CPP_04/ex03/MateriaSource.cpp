@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 15:18:47 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/28 17:56:41 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/06/29 09:10:09 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource & copy)
 
 MateriaSource::~MateriaSource()
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; _toLearn[i]; i++)
 		delete _toLearn[i];
 	delete [] _toLearn;
 }
