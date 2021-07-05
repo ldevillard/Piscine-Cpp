@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 16:07:23 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/05 17:57:42 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/07/05 15:40:23 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/07/05 17:55:05 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 #include <iostream>
 #include <string>
 #include "Form.hpp"
-#include <fstream>
 
-class ShrubberyCreationForm : public Form 
+class PresidentialPardonForm : public Form
 {
 	private:
 		std::string _target;
-		ShrubberyCreationForm();
+		PresidentialPardonForm();
 	public:
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
-		virtual ~ShrubberyCreationForm();
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(const PresidentialPardonForm &copy);
+		PresidentialPardonForm &operator=(const PresidentialPardonForm &copy);
+		virtual ~PresidentialPardonForm();
 
 		std::string getTarget() const {return _target;}
 

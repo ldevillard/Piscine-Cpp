@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 16:07:23 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/05 17:57:42 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2021/07/05 16:02:00 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/07/05 17:55:08 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
 #include <string>
 #include "Form.hpp"
-#include <fstream>
 
-class ShrubberyCreationForm : public Form 
+class RobotomyRequestForm : public Form 
 {
 	private:
 		std::string _target;
-		ShrubberyCreationForm();
+		RobotomyRequestForm();
 	public:
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
-		virtual ~ShrubberyCreationForm();
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(const RobotomyRequestForm &copy);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
+		virtual ~RobotomyRequestForm();
 
 		std::string getTarget() const {return _target;}
 

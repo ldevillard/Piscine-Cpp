@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 16:02:00 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/05 16:03:21 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/05 17:57:38 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class RobotomyRequestForm : public Form
 		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm &copy);
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
-		~RobotomyRequestForm();
+		virtual ~RobotomyRequestForm();
 
 		std::string getTarget() const {return _target;}
 

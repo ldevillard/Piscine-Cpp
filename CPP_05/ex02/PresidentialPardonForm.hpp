@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:40:23 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/05 15:54:47 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/05 17:57:34 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &copy);
-		~PresidentialPardonForm();
+		virtual ~PresidentialPardonForm();
 
 		std::string getTarget() const {return _target;}
 
