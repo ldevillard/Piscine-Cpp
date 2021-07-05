@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:10:36 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/29 15:53:31 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/05 15:59:42 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ class Form
 		bool getSigned() const {return _signed;}
 
 		void	beSigned(const Bureaucrat &worker);
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -53,6 +54,14 @@ class Form
 		const char * what () const throw ()
 		{
 			return "\e[0;31mError : grade is too low !\e[0m";
+		}
+	};
+
+	class NotSignedException : public std::exception
+	{
+		const char * what () const throw ()
+		{
+			return "\e[0;31mError : form isn't signed !\e[0m";
 		}
 	};
 };

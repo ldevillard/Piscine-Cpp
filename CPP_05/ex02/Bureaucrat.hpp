@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 12:59:42 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/06/29 15:55:41 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/05 16:20:42 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ class Bureaucrat
 		void	incrementGrade();
 		void	decrementGrade();
 		void	signForm(Form &form);
+
+		void executeForm(Form const & form);
 
 	class GradeTooHighException : public std::exception
 	{
