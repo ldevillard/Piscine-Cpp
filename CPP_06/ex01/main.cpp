@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 11:40:53 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/06 14:28:55 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/07 11:47:25 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int main()
 	std::cout << std::endl << RED << "Addresses" << RESET << std::endl;
 	std::cout << person << std::endl;
 	std::cout << restoredPerson << std::endl;
-	
+
 	delete person;
 	return 0;
 }
