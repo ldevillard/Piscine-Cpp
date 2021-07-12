@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 11:05:27 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/09 11:17:46 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/12 09:56:25 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,48 @@ void	Span::addNumber(int nb)
 		_tab.push_back(nb);
 		_stored++;
 	}
+}
+
+int Span::shortestSpan()
+{
+	std::vector<int> buf(_tab);
+	std::vector<int>::iterator it = _tab.begin();
+	int smallest = *it;
+
+	while (it != _tab.end())
+	{
+		if (smallest > *it)
+			smallest = *it;
+		it++;
+	}
+
+	it = _tab.begin();
+	int smallNext = *it;
+	while (it != _tab.end())
+	{
+		if (smallNext > *it && *it > smallest)
+			smallNext = *it;
+		else if (smallNext == smallest)
+			smallNext = *it;
+		it++;
+	}
+	return smallNext - smallest;
+}
+
+int Span::longestSpan()
+{
+	std::vector<int> buf(_tab);
+	std::vector<int>::iterator it = _tab.begin();
+	int smallest = *it;
+	int biggest = *it;
+
+	while (it != _tab.end())
+	{
+		if (smallest > *it)
+			smallest = *it;
+		if (biggest < *it)
+			biggest = *it;
+		it++;
+	}
+	return biggest - smallest;
 }

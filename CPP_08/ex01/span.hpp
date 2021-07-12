@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 10:58:28 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/09 11:22:56 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/12 09:37:03 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ class Span
 		void addNumber(int nb);
 		int shortestSpan();
 		int longestSpan();
-
 
 		class FullFilled : public std::exception
 		{
