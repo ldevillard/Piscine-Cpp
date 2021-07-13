@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 11:05:27 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/12 17:14:46 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/13 16:37:15 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,59 +54,26 @@ void	Span::addNumber(int nb)
 
 int Span::shortestSpan()
 {
-	std::vector<int> buf(_tab);
-	std::vector<int>::iterator it = _tab.begin();
-	int smallest = *it;
-	int i = 0;
-
 	if (_stored <= 1)
 		throw NoSpanToFind();
-	while (it != _tab.end())
-	{
-		if (i++ == _stored)
-			break;
-		if (smallest > *it)
-			smallest = *it;
-		it++;
-	}
-
-	i = 0;
-	it = _tab.begin();
-	int smallNext = *it;
-	while (it != _tab.end())
-	{
-		if (i++ == _stored)
-			break;
-		if (smallNext > *it && *it > smallest)
-			smallNext = *it;
-		else if (smallNext == smallest)
-			smallNext = *it;
-		it++;
-	}
-	return smallNext - smallest;
+	std::sort(_tab.begin(), _tab.end());
+	
+	std::vector<int>::iterator it = _tab.begin();
+	std::vector<int>::iterator itP = _tab.begin();
+	itP++;
+	int result = *itP++ - *it++;
+	while (itP != _tab.end())
+		result = std::min(result, (*itP++ - *it++));
+	return result;
 }
 
 int Span::longestSpan()
 {
-	std::vector<int> buf(_tab);
-	std::vector<int>::iterator it = _tab.begin();
-	int smallest = *it;
-	int biggest = *it;
-	int i = 0;
-
 	if (_stored <= 1)
 		throw NoSpanToFind();
-	while (it != _tab.end())
-	{
-		if (i++ == _stored)
-			break;
-		if (smallest > *it)
-			smallest = *it;
-		if (biggest < *it)
-			biggest = *it;
-		it++;
-	}
-	return biggest - smallest;
+	int max = *(std::max_element(_tab.begin(), _tab.end()));
+	int min = *(std::min_element(_tab.begin(), _tab.end()));
+	return max - min;
 }
 
 void Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end)

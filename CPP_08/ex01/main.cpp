@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 09:35:09 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/13 09:03:14 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/13 16:40:17 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	main()
 	try
 	{
 		sp.addNumber(5);
-		sp.addNumber(3);
-		sp.addNumber(17);
-		sp.addNumber(9);
-		sp.addNumber(11);
+		sp.addNumber(8);
+		sp.addNumber(14);
+		sp.addNumber(18);
+		sp.addNumber(25);
 		//sp.addNumber(11);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;

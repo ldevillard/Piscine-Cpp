@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 10:25:26 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/09 10:57:10 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/13 16:09:26 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ int main()
 
 	try
 	{
-		std::vector<int>::iterator it = easyfind(tab, 65);
-		std::cout << *it << std::endl;
-		it = easyfind(tab, 5);
-		std::cout << *it << std::endl;
+		std::cout << easyfind(tab, 65) << std::endl;
+		std::cout << easyfind(tab, 5) << std::endl;
 	}
 	catch (std::exception & e)
 	{
 		std::cout << e.what() << std::endl;
 	}
+
 }

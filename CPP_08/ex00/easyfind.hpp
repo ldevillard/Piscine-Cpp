@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 09:36:51 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/09 10:52:22 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/13 16:08:55 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <iterator>
+#include <algorithm>
 
 class CantFind : public std::exception
 {
@@ -25,16 +26,14 @@ class CantFind : public std::exception
 };
 
 template<typename T>
-typename T::iterator easyfind(T &container, int i)
+int	&easyfind(T &container, int i)
 {
-	typename T::iterator it = container.begin();
-	while (it != container.end())
-	{
-		if (*it == i)
-			return it;
-		it++;
-	}
-	throw CantFind();
+	typename T::iterator it;
+	
+	it = std::find(container.begin(), container.end(), i);
+	if (it == container.end())
+		throw CantFind();
+	return *it;
 }
 
 #endif
