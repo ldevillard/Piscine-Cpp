@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:04:23 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/13 17:16:24 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/13 17:45:23 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,49 +28,12 @@ class MutantStack : public std::stack<T>
 {
 	public:
 		MutantStack(){}
-		MutantStack(MutantStack &copy)
+		MutantStack(MutantStack &copy) : std::stack<T>(copy)
 		{
-			std::list<T> buf;
-
-			while(copy.size())
-			{
-				buf.push_back(copy.top());
-				copy.pop();
-			}
-			typename std::list<T>::iterator it = buf.end();
-			it--;
-			while (it != buf.begin())
-			{
-				this->push(*it);
-				copy.push(*it);
-				it--;
-			}
-			this->push(*it);
-			copy.push(*it);
-			buf.clear();
 		}
 		MutantStack &operator=(MutantStack &copy)
 		{
-			std::list<T> buf;
-
-			while (!this->empty())
-				this->pop();
-			while(copy.size())
-			{
-				buf.push_back(copy.top());
-				copy.pop();
-			}
-			typename std::list<T>::iterator it = buf.end();
-			it--;
-			while (it != buf.begin())
-			{
-				this->push(*it);
-				copy.push(*it);
-				it--;
-			}
-			this->push(*it);
-			copy.push(*it);
-			buf.clear();
+			std::stack<T>::operator=(copy);
 			return *this;
 		}
 		~MutantStack(){}
