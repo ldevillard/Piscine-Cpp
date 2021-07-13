@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 09:04:23 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/07/13 11:31:41 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/07/13 17:16:24 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,20 +75,16 @@ class MutantStack : public std::stack<T>
 		}
 		~MutantStack(){}
 
-		typedef T *iterator;
+		typedef typename std::stack<T>::container_type::iterator iterator;
 
-		MutantStack<T>::iterator begin()
+		iterator begin()
 		{
-			MutantStack<T>::iterator it = &this->top();
-			for (int i = 0; i < (int)this->size(); i++)
-				it--;
-			return it + 1;
+			return std::begin(std::stack<T>::c);
 		}
 
-		MutantStack<T>::iterator end()
+		iterator end()
 		{
-			MutantStack<T>::iterator it = &this->top();
-			return it + 1;
+			return std::end(std::stack<T>::c);
 		}
 };
 
